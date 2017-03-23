@@ -21,7 +21,7 @@ export default function configureStore(initialState = {}, history) {
   const store = createStore(
     createReducer(),
     fromJS(initialState),
-    compose(...enhancers)
+    compose(...enhancers),
   );
 
   store.runSaga = sagaMiddleware.run;

@@ -32,7 +32,7 @@ module.exports = {
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
     }, {
       test: /\.css$/,
       include: /node_modules/,
@@ -41,7 +41,7 @@ module.exports = {
       test: /\.(jpe?g|png|gif|svg)$/,
       loaders: [
         'file-loader',
-        'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}',
+        'image-webpack-loader?{progressive:true, pngquant:{quality: "65-90", speed: 4}}',
       ],
     }],
   },

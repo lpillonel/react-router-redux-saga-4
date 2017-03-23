@@ -6,11 +6,13 @@
 */
 
 import React from 'react';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import Footer from './components/Footer';
 import NavigationBar from './components/NavigationBar';
+
 
 const appContainerStyling = {
   appContainer: {
@@ -18,20 +20,23 @@ const appContainerStyling = {
   },
 };
 
-const Routing = ({ store }) => (
-  <BrowserRouter>
-    <Provider store={store}>
+const Routing = ({ store, history }) => (
+  <Provider store={store}>
+    <ConnectedRouter history={history}>
       <App>
         <NavigationBar />
         <div style={appContainerStyling.appContainer}>
-          <Match exactly pattern="/" component={require('react-router?name=home!./containers/Home')} />
-          <Match exactly pattern="/example" component={require('react-router?name=example!./containers/Example')} />
-          <Miss component={require('react-router?name=notFound!./containers/NotFound')} />
+          <Switch>
+              <Route exact path="/" component={require('react-router-loader?name=home!./containers/Home')} />
+              <Route exact path="/example" component={require('react-router-loader?name=home!./containers/Example')} />
+              <Route exact path="/" component={require('react-router-loader?name=home!./containers/Home')} />
+              <Route component={require('react-router-loader?name=home!./containers/NotFound')} />
+          </Switch>
         </div>
         <Footer />
       </App>
-    </Provider>
-  </BrowserRouter>
+    </ConnectedRouter>
+  </Provider>
 );
 
 Routing.propTypes = {

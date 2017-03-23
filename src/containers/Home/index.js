@@ -79,4 +79,3 @@ class Home extends React.Component { // eslint-disable-line react/prefer-statele
 }
 
 export default Home;
-
