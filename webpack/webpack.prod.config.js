@@ -1,9 +1,9 @@
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const precss = require('precss');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const precss = require('precss')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -25,9 +25,6 @@ module.exports = {
       test: /\.js$/,
       include: path.resolve(process.cwd(), 'src'),
       loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'stage-0', 'react'],
-      },
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
@@ -83,4 +80,4 @@ module.exports = {
       template: './index.html',
     }),
   ],
-};
+}

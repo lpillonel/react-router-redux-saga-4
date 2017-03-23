@@ -1,9 +1,9 @@
-import React from 'react';
-import styles from './styles.css';
+import React from 'react'
+import styles from './styles.css'
 
 const NotFoundRoute = () =>
 (<div className={styles.appContainer}>
   <p>Route is not found!</p>
-</div>);
+</div>)
 
-export default NotFoundRoute;
+export default NotFoundRoute

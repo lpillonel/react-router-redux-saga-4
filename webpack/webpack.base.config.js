@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const precss = require('precss');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
+const precss = require('precss')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -20,19 +20,24 @@ module.exports = {
   },
   devtool: 'eval',
   module: {
-    loaders:
+    rules:
     [{
       test: /\.js$/,
       include: path.resolve(process.cwd(), 'src'),
       loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'stage-0', 'react'],
-        plugins: ['react-hot-loader/babel'],
-      },
+    }, {
+      test: /\.scss$/,
+      use: [{
+        loader: 'style-loader', // creates style nodes from JS strings
+      }, {
+        loader: 'css-loader?modules&importLoaders=1&localIdentName=[hash:base64:8]', // translates CSS into CommonJS
+      }, {
+        loader: 'sass-loader', // compiles Sass to CSS
+      }],
     }, {
       test: /\.css$/,
       exclude: /node_modules/,
-      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+      loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[hash:base64:8]',
     }, {
       test: /\.css$/,
       include: /node_modules/,
@@ -64,4 +69,4 @@ module.exports = {
       },
     }),
   ],
-};
+}

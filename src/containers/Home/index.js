@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from './style.css';
-import reactLogo from '../../static/images/react.svg';
-import reduxLogo from '../../static/images/redux.svg';
-import reactRouterLogo from '../../static/images/reactrouter.png';
-import webpackLogo from '../../static/images/webpack.png';
+import React from 'react'
+import styles from './style.css'
+import reactLogo from '../../static/images/react.svg'
+import reduxLogo from '../../static/images/redux.svg'
+import reactRouterLogo from '../../static/images/reactrouter.png'
+import webpackLogo from '../../static/images/webpack.png'
 
 
 class Home extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
+  render () {
     return (
       <div className={styles.appContainer}>
         <div className={styles.appIntroBanner}>
@@ -74,8 +74,8 @@ class Home extends React.Component { // eslint-disable-line react/prefer-statele
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

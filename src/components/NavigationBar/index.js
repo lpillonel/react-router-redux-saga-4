@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink as Link } from 'react-router-dom';
-import styles from './styles.css';
+import React from 'react'
+import { NavLink as Link } from 'react-router-dom'
+import styles from './styles.css'
 
 const NavigationBar = () => (
   <div className={styles.navigationBar}>
@@ -26,6 +26,6 @@ const NavigationBar = () => (
       </Link>
     </div>
   </div>
-);
+)
 
-export default NavigationBar;
+export default NavigationBar
