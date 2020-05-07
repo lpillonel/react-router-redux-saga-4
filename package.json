@@ -7,7 +7,9 @@
     "start": "node ./webpack/webpack_devServer.js",
     "build": "rimraf ./dist && webpack --config ./webpack/webpack.prod.config.js",
     "preview": "http-server ./dist -p 3001 -c-1 -o",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,8 @@
     "reselect": "2.5.4",
     "sanitize.css": "5.0.0",
     "styled-components": "^1.4.4",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "2.0.3",
+    "snyk": "^1.319.1"
   },
   "devDependencies": {
     "auto-prefixer": "0.4.2",
@@ -70,5 +73,6 @@
     "webpack": "2.3.1",
     "webpack-dev-server": "2.4.2",
     "webpack-module-hot-accept": "1.0.4"
-  }
+  },
+  "snyk": true
 }
